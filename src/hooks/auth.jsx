@@ -38,7 +38,7 @@ function AuthProvider({ children }) {
     try {
       if (avatarFile) {
         const fileUploadForm = new FormData();
-        fileUpdateForm.append("avatar", avatarFile);
+        fileUploadForm.append("avatar", avatarFile);
 
         const response = await api.patch("/user/avatar", fileUploadForm);
         user.avatar = response.data.avatar;
@@ -50,7 +50,7 @@ function AuthProvider({ children }) {
       setData({ user, token: data.token });
       alert("Perfil atualizado");
       
-    } catch {
+    } catch (error){
       if (error.response) {
         alert(error.response.data.message);
       } else {
