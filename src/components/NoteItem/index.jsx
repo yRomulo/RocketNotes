@@ -4,7 +4,7 @@ import { Container } from "./styles";
 
 export function NoteItem({ isNew, value, onClick, ...rest }) {
   return (
-    <Container isNew={isNew}>
+    <Container isew={isNew}>
       <input type="text" value={value} readOnly={!isNew} {...rest} />
 
       <button
